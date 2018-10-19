@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% set title = "#1 Fundraiser" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="intro">
+	<div class="msg">
+		<h1>Raise money for yourself, others, and charities.</h1>
+		<a href="#">Start fundraising</a>
+	</div>
+	<div><i class="material-icons">accessibility</i></div>
+</div>
+<div class="box">
+	<div>
+		<div class="title">Asking for money is hard.</div>
+		<div class="title"><strong>FundMePlease</strong> makes it easier.</div>
+	</div>
+	<div>
+		<div class="note">People just like you have raised more money on FundMePlease than anywhere else.</div>
+	</div>
+</div>
+<div class="array">
+	<div>
+		<div class="title">Big or small, small or big</div>
+		<div class="title">Your cause matters.</div>
+	</div>
+	<div class="tiles">
+		<div class="tile">
+			<i class="material-icons">school</i>
+			<p>Education</p>
+		</div>
+		<div class="tile">
+			<i class="material-icons">laptop_chromebook</i>
+			<p>Technology</p>
+		</div>	
+		<div class="tile">
+			<i class="material-icons">add</i>
+			<p>Medical</p>
+		</div>	
+		<div class="tile">
+			<i class="material-icons">explore</i>
+			<p>Travel</p>
+		</div>		
+	</div>
+</div>
+{% endblock %}

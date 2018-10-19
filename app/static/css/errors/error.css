@@ -1,0 +1,27 @@
+body {
+	background-color: #222;
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAkUlEQVQYlT2PSxXAMAgEMTC3ekAEHhCBCDxERETgARHxEBHpoa85729WupsxBplJRJCZ7L1RVcwMWWshIuy9qaorqCrdjagqmYmZ0d3XeM5BVZE5J2stnufB3XF3qoqq+hpEBHdnzomZMee86cz8Gv7UDxgRjDFw948hIjjnXPq9950Udyci+O+aGWMMVJW1Fi/ypGHrMzQ/tQAAAABJRU5ErkJggg==);
+}
+
+.http-error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
+	margin: 3rem 0;
+	font-family: 'Gugi', cursive;
+}
+
+.http-error .error_title {
+	font-size: 5rem;
+	color: #ddd;
+}
+
+.http-error .error_code {
+	font-size: 4rem;
+	color: #ddd;
+}
+
+.http-error .error_description {
+	font-size: 3rem;
+	color: #ddd;
+}

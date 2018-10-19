@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% set title = "Signup" %}
+
+{% block content %}
+<div class="signup">
+	{% set url = url_for('user_signup') %}
+	{% if return_url != None %}
+	{% set url = url + '?return_url=' + return_url %}
+	{% endif %}
+	<form class="form-card" action="{{ url }}" method="post">
+		{{ form.hidden_tag() }}	
+		<fieldset class="form-fieldset">
+			<div class="form-element">
+				<label class="form-element-label center-text full-width">Already have an account? <a href="{{ url_for('user_login') }}">Log in</a></label>
+			</div>
+		</fieldset>	
+		<hr>
+		<fieldset class="form-fieldset">
+		    <legend class="form-legend">{{ form.title }}</legend>
+		    <div class="form-element form-input">
+		        {{ form.username(class_="form-element-field") }}
+		        <div class="form-element-bar"></div>
+		        {{ form.username.label(class_="form-element-label") }}
+		        {% for message in form.username.errors %}
+				<div class="form-error">{{ message }}</div>
+				{% endfor %}
+		    </div>
+		    <div class="form-element form-input">
+		        {{ form.email(class_="form-element-field") }}
+		        <div class="form-element-bar"></div>
+		        {{ form.email.label(class_="form-element-label") }}
+		        {% for message in form.email.errors %}
+				<div class="form-error">{{ message }}</div>
+				{% endfor %}
+		    </div>
+		    <div class="form-element form-input">
+		        {{ form.password(class_="form-element-field") }}
+		        <div class="form-element-bar"></div>
+		        {{ form.password.label(class_="form-element-label") }}
+		        {% for message in form.password.errors %}
+				<div class="form-error">{{ message }}</div>
+				{% endfor %}
+		    </div>
+		    <div class="form-element form-input">
+		        {{ form.password_retype(class_="form-element-field") }}
+		        <div class="form-element-bar"></div>
+		        {{ form.password_retype.label(class_="form-element-label") }}
+		        {% for message in form.password_retype.errors %}
+				<div class="form-error">{{ message }}</div>
+				{% endfor %}
+		    </div>
+		    <div class="form-element">
+		    	<label>{{ form.agreement }}</label>
+			</div>
+		</fieldset>
+		<div class="form-actions">			
+			{{ form.submit(class_="form-btn blue darken-4") }}
+		</div>
+	</form>	
+</div>	
+{% endblock %}

@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>{% if title %} {{title}} | {% endif %} {{ WEBSITE_NAME }}</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Gugi|Roboto:100,400" rel="stylesheet"> 
+		
+      	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/normalize.css')}}"/>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/framework.css')}}">
+		
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">		
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/header.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/footer.css')}}">		
+		
+		{# template specific css #}
+		{% block css %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="header">
+			{% include 'header.html' %}
+		</div>
+		<div class="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<div class="footer">
+			{% include 'footer.html' %}
+		</div>
+		{% block js %}
+		{% endblock %}
+	</body>
+</html>
+
+
+

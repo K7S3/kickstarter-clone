@@ -1,0 +1,44 @@
+.profile {
+	background-color: #fff;
+	padding: 2rem 0;
+}
+
+.profile .container {
+	width:70%;
+	margin: auto;
+}
+
+.profile .basic-info {
+	display: flex;
+}
+
+.profile .basic-info > div {
+	margin: 0 2rem;
+}
+
+.profile .basic-info .username {
+	margin: 1rem 0;
+	font-size: 2rem;
+}
+
+.profile .basic-info .regdate {
+	font-size: 1.3rem;
+}
+
+.profile .private-info .balance {
+	margin: 1rem 0;
+	font-size: 1.2rem;
+}
+
+.profile .basic-info .avatar {
+	background-color: #ddd;
+	border: 1px solid #aaa;
+	padding: 2rem;
+	border-radius: 5px;
+}
+
+.profile .basic-info .avatar img {
+	width: 192px;
+	height: 192px;
+	border-radius: 5px;
+}
