@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% set title = "Login" %}
+
+{% block content %}
+<div class="login">
+	{% set url = url_for('user_login') %}
+	{% if return_url != None %}
+	{% set url = url + '?return_url=' + return_url %}
+	{% endif %}
+	<form class="form-card" action="{{ url }}" method="post">
+		{{ form.hidden_tag() }}
+		<fieldset class="form-fieldset">
+			<div class="form-element">
+				<label class="form-element-label center-text full-width">Don't have an account? <a href="{{ url_for('user_signup') }}">Sign Up</a></label>
+			</div>
+		</fieldset>	
+		<hr>
+		<fieldset class="form-fieldset">
+		    <legend class="form-legend">{{ form.title }}</legend>
+		    <div class="form-element">
+		    	{{ form.name(class_="form-element-field") }}
+		        <div class="form-element-bar"></div>
+		        {{ form.name.label(class_="form-element-label") }}
+		        {% for message in form.name.errors %}
+				<div class="form-error">{{ message }}</div>
+				{% endfor %}
+		    </div>
+		    <div class="form-element">
+		        {{ form.password(class_="form-element-field") }}
+		        <div class="form-element-bar"></div>
+		        {{ form.password.label(class_="form-element-label") }}
+		        {% for message in form.password.errors %}
+				<div class="form-error">{{ message }}</div>
+				{% endfor %}
+		    </div>
+		    <div class="form-checkbox">
+		        <label class="form-checkbox-label">
+		        	{{ form.rememberme(class_="form-checkbox-field") }}
+		            <i class="form-checkbox-button"></i>
+		            <span>Remember Me</span>
+		        </label>
+		    </div>			
+		</fieldset>
+		<div class="form-actions">
+			{{ form.submit(class_="form-btn blue darken-4") }}
+		</div>
+	</form>	
+</div>	
+{% endblock %}

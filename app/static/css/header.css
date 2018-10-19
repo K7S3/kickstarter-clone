@@ -1,0 +1,71 @@
+.header {
+	display: flex;
+	align-items: center;
+	
+	padding: 0 80px;
+	background-color: #F9F9F9;	
+	border-bottom: 1px solid #AAA;
+}
+
+.logo a {
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 3em;
+	color: #333;
+	
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.logo a:hover {
+	color: #111;
+	font-size: 3.1em;
+	text-shadow: 2px 2px #111;
+	transition: all 0.2s;
+}
+
+.header .main-nav {
+	display: flex;
+	margin-left: auto;
+}
+
+.header .main-nav span {
+	margin: 1.5rem;
+}
+
+.header .main-nav a {
+	font-size: 1.2em;
+	color: #333;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+}
+
+.header .main-nav a::before {
+	content: '';
+	display: block;
+	height: 2px;
+}
+
+.header .main-nav a::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background-color: #333;
+	text-decoration: underline;
+	transition: width .3s;
+}
+
+.header .main-nav a:hover::after {
+	width: 100%;
+	transition: width .3s;
+}
+
+.account-nav {
+	display: flex;
+	align-items: center;
+}
+
+.header .account-nav span {
+	margin: 1rem;
+}

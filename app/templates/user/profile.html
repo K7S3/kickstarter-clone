@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set title = "Profile does not exist" %}
+{% if user != None %}
+{% set title = user.username + "'s Profile" %}
+{% endif %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/user/profile.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="profile">
+	<div class="container">
+		<div class="basic-info">
+			<div class="avatar">
+				<img src="{{ url_for('static', filename=user['avatar']) }}"/>
+			</div>
+			<div>
+				{% if user != None %}
+					<div class="username">{{ user.username }}</div>
+					<div class="regdate">Member since {{ user.reg_date.isoformat().split("T")[0] }}</div>
+					{% if user.userid == session.get('userid', -1) %}
+					<div class="private-info">
+						<div class="balance">Your balance: {{ user.balance }} INR </div>
+					</div>
+					{% endif %}
+				{% else %}
+					<div class="username">No such account exists.</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>	
+{% endblock %}

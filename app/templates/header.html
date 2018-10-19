@@ -1,0 +1,16 @@
+<div class="logo">
+	<a href="{{ url_for('index') }}">fundMePlease</a>
+</div>
+<div class="main-nav">
+	<span><a href=#">Start a project</a></span>
+	<span><a href=#">Explore projects</a></span>
+</div>
+<div class="account-nav">
+	{% if 'userid' in session %}
+	<span>Hi, <a href="{{ url_for('user_profile') }}">{{ session['username'] }}</a></span>
+	<span><a href="{{ url_for('user_logout') }}">Logout</a></span>
+	{% else %}
+	<span><a href="{{ url_for('user_signup') }}">Sign Up</a></span>
+	<span><a href="{{ url_for('user_login') }}">Log in</a></span>
+	{% endif %}
+</div>
